@@ -20,6 +20,8 @@ namespace PrecisionCache
 
         public int Count => _localCacheItems.Count;
 
+        private SimpleLocalCache()
+        { }
         /// <summary>
         /// Use a trimming interval when you're caching large amounts of data
         /// that most likely won't be reused once expired.
@@ -68,7 +70,7 @@ namespace PrecisionCache
         /// </summary>
         /// <param name="key">lookup key</param>
         /// <param name="value">the caller knows the object type</param>
-        /// <param name="tags">can be used for assigning tags to cache items</param>
+        /// <param name="tags">optional, can be used for assigning tags to cache items</param>
         public void AddOrUpdate(string key, object value, params string[] tags)
         {
             _localCacheItems[key] = new SimpleCacheItem() { ExpirationTime = DateTime.Now.AddMinutes(_timeout), Value = value, Tags = tags };
