@@ -67,3 +67,20 @@ To retrieve an object from the cache:
     if (MyLocalCache.TryGetValue(key, out var valueFromCache) )
 ```
 
+The cachae would normally be used as follows:
+
+```C#
+    object cachedData;
+    if (MyLocalCache.TryGetValue(key, out cachedData))
+    {
+        return cachedData; // use the data
+    }
+    else
+    {
+        var myNewData =  ???????????????????;   // retrieve/create object holding the data
+        
+        MyLocalCache.AddOrUpdate(key, myNewData);  // add to cache
+
+        return myNewData;  // use the data
+    }
+```

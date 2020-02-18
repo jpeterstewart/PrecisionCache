@@ -11,7 +11,7 @@ namespace CacheTester
         private static void AddToCache(string key, string value, params string[] tags)
         {
             Console.WriteLine("Adding to cache:   {0} -> {1}", key, value);
-            MyLocalCache.AddOrUpdate(key, value, tags);  // timeout is optional
+            MyLocalCache.AddOrUpdate(key, value, tags);  // tags are optional
         }
 
         private static void TryToRetrieve(string key)
