@@ -1,6 +1,6 @@
 # PrecisionCache
 
-This cache object follows a different philosophy from most of the cache implementations out there.
+This cache follows a different philosophy from most of the cache implementations out there. Here's a list of what it is and what it is not:
 
 * It is not a cache "layer", indiscriminately caching things wether they need to be cached or not.
 * It is not intended to transparently sit between the consumer and the data source, keeping track of updates and automatically clearing cache content as needed.
@@ -66,6 +66,4 @@ To retrieve an object from the cache:
 ```C#
     if (MyLocalCache.TryGetValue(key, out var valueFromCache) )
 ```
-
-
 
