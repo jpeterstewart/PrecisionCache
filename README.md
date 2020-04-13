@@ -67,7 +67,7 @@ To retrieve an object from the cache:
     if (MyLocalCache.TryGetValue(key, out var valueFromCache) )
 ```
 
-The cachae would normally be used as follows:
+The cache would normally be used as follows:
 
 ```C#
     object cachedData;
